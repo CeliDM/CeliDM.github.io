@@ -39,7 +39,7 @@
     line-height: 1.6;
   }
   .page {
-    max-width: 46rem;
+    max-width: 52rem;
     margin: 0 auto;
     padding: 0 1rem 4rem;
   }
@@ -79,6 +79,340 @@
     text-shadow: 0 1px 6px rgba(6, 22, 38, 0.6);
   }
   .masthead-inner {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .masthead a { color: #FFFFFF; }
+  .masthead a:focus-visible { outline-color: #FFFFFF; }
+  main > section:first-child { border-top: none; margin-top: 0.5rem; }
+
+  /* Top navigation */
+  .topnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    justify-content: flex-end;
+    padding: 1.25rem 0 0;
+    font-size: 0.95rem;
+  }
+  .topnav a { color: rgba(255, 255, 255, 0.85); text-decoration: none; }
+  .topnav a:hover { color: #FFFFFF; text-decoration: underline; }
+
+  /* Hero: the yellow bar echoes the painted transition piece of an offshore turbine */
+  .hero {
+    display: grid;
+    grid-template-columns: 7px 1fr auto;
+    column-gap: 1.5rem;
+    align-items: stretch;
+    margin: 0;
+    padding: 3.25rem 0 0;
+  }
+  .mark { background: var(--signal); }
+  .hero-text { padding: 0.25rem 0; }
+  h1 {
+    font-family: "Barlow Condensed", "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: clamp(2.75rem, 9vw, 4.25rem);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.9rem;
+  }
+  .role {
+    text-wrap: balance;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0 0 0.6rem;
+    max-width: none;
+    line-height: 1.35;
+  }
+  .affil { color: rgba(255, 255, 255, 0.82); margin: 0 0 1.25rem; line-height: 1.45; }
+  .links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.1rem;
+    font-weight: 500;
+  }
+  .portrait {
+    margin: 0;
+    width: 8.5rem;
+    align-self: start;
+    aspect-ratio: 4 / 5;
+    background: var(--portrait-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85);
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .portrait .initials {
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 2.5rem; font-weight: 600; color: var(--muted);
+  }
+  .portrait img + .initials { display: none; }
+
+  /* Sections */
+  section {
+    border-top: 1px solid var(--line);
+    padding-top: 1.75rem;
+    margin-top: 2.5rem;
+    scroll-margin-top: 1rem;
+  }
+  h2 {
+    font-family: "Barlow Condensed", "Barlow", sans-serif;
+    font-weight: 600;
+    font-size: 1.75rem;
+    line-height: 1.1;
+    margin: 0 0 1rem;
+  }
+  h3 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin: 0 0 0.15rem;
+    line-height: 1.4;
+  }
+  p { margin: 0 0 1rem; max-width: 68ch; }
+  .meta { color: var(--muted); font-size: 0.95rem; margin: 0 0 0.4rem; }
+
+  .entries { list-style: none; padding: 0; margin: 0; }
+  .entries > li { margin: 0 0 1.5rem; }
+  .entries > li:last-child { margin-bottom: 0; }
+  .entries p { margin-bottom: 0.4rem; }
+
+  .dissertation {
+    margin: 1.5rem 0 0;
+    padding-left: 1rem;
+    border-left: 2px solid var(--line);
+  }
+  .dissertation h3 { color: var(--muted); font-size: 0.95rem; font-weight: 400; }
+  .dissertation .dtitle { font-style: italic; font-size: 1.1rem; margin: 0 0 0.4rem; }
+  .dissertation .meta { margin: 0; }
+
+  .pubs .authors { margin-bottom: 0.15rem; }
+  .pubs .venue { color: var(--muted); font-size: 0.95rem; }
+
+  .button {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    border: 1.5px solid var(--ink);
+    border-radius: 3px;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .button:hover { background: var(--ink); color: var(--bg); }
+
+  .nw { white-space: nowrap; }
+  address { font-style: normal; line-height: 1.55; margin-bottom: 1rem; }
+
+  footer {
+    margin-top: 3.5rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 1400px) {
+    body { font-size: 1.125rem; }
+  }
+  @media (min-width: 561px) and (max-width: 1150px) {
+    .masthead {
+      background:
+        linear-gradient(rgba(6, 22, 38, 0.42), rgba(6, 22, 38, 0.42)),
+        url("background.jpeg") var(--photo-focus) / auto 150% no-repeat,
+        #2C6286;
+    }
+  }
+  @media (max-width: 560px) {
+    .masthead {
+      min-height: 0;
+      background:
+        linear-gradient(rgba(6, 22, 38, 0.55), rgba(6, 22, 38, 0.55)),
+        url("background.jpeg") var(--photo-focus) / auto 150% no-repeat,
+        #2C6286;
+    }
+    .hero { padding-bottom: 2.5rem; }
+    .hero {
+      grid-template-columns: 6px 1fr;
+      column-gap: 1rem;
+      padding-top: 2rem;
+    }
+    .portrait {
+      grid-column: 2;
+      grid-row: 1;
+      width: 6.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .mark { grid-row: 1 / span 2; }
+    .hero-text { grid-column: 2; grid-row: 2; }
+    .topnav { justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="masthead">
+  <p class="photo-credit">Cover image credit: RWE / Niklas Marc Heinecke</p>
+  <div class="masthead-inner">
+
+  <nav class="topnav" aria-label="Sections">
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <div class="mark" aria-hidden="true"></div>
+    <div class="hero-text">
+      <h1>Célestin Demuytere</h1>
+      <p class="role">PhD researcher - Focus on the <span class="nw">End-of-Life</span> Sustainability of Offshore Wind Farms</p>
+      <p class="affil">
+        Sustainable Systems Engineering (STEN), Ghent University<br>
+        Joint doctorate with Vrije Universiteit Brussel, <span class="nw">House of Sustainable Transitions (HOST)</span>
+      </p>
+      <ul class="links">
+        <li><a href="mailto:celestin.demuytere@ugent.be">Email</a></li>
+        <li><a href="https://orcid.org/0000-0002-6376-6957">ORCID</a></li>
+        <li><a href="https://www.linkedin.com/in/celestin-demuytere/">LinkedIn</a></li>
+        <li><a href="https://github.com/CeliDM">GitHub</a></li>
+      </ul>
+    </div>
+    <figure class="portrait">
+      <img src="profile.jpeg" alt="Portrait of Célestin Demuytere" onerror="this.remove()">
+      <span class="initials" aria-hidden="true">CD</span>
+    </figure>
+  </header>
+
+  </div>
+</div>
+<div class="page">
+  <main>
+    <section id="research">
+      <h2>Research</h2>
+      <p>My research examines the end-of-life phase of offshore wind farms, from decommissioning at sea to material recovery on land. The first generation of wind farms in the Belgian North Sea is approaching the end of its operational life, with few large-scale decommissioning projects as precedents. Decommissioning nonetheless requires cooperation between wind farm owners, marine contractors, recyclers and public authorities. Their decisions cover which structures are removed or left in situ, and how the recovered materials are treated. These choices affect how much material returns to the economy, the environmental impact of decommissioning and the supply of critical raw materials.</p>
+      <p>My dissertation quantifies the circularity, environmental impact and material criticality of alternative decommissioning and end-of-life strategies. It combines material flow analysis, circular economy metrics, life cycle assessment, cascade allocation modelling and material criticality assessment in scenarios for one of these first-generation wind farms.</p>
+      <p>Joint work with colleagues extends the analysis to the diverging economic incentives of wind farm owners and marine contractors, and to the European stocks and flows of metals in wind turbines. The ORESA, DECOMPASS and CTO projects bring the work into direct contact with wind farm operators, recyclers, engineering firms and public agencies. Master's thesis projects linked to this work cover subsea cables, second-life options for wind turbines and raw material demand for electrification infrastructure.</p>
+      <div class="dissertation">
+        <h3>Dissertation</h3>
+        <p class="dtitle">From seabed to smelter: Circularity, environmental impact and material criticality in offshore wind decommissioning</p>
+        <p class="meta">Promotors: Jo Dewulf (Ghent University) and Gwenny Thomassen (Vrije Universiteit Brussel)</p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="entries">
+        <li>
+          <h3><a href="https://oresa.nweurope.eu/">ORESA</a></h3>
+          <p class="meta">Offshore Renewable Energy Sustainability Alliance. Interreg North-West Europe, <span class="nw">2025-2028</span></p>
+          <p>A consortium of industry, government and research partners from five North-West European countries that works on sustainability in offshore renewable energy, including circularity and life cycle assessment.</p>
+        </li>
+        <li>
+          <h3><a href="https://www.bluecluster.be/projects/decompass">DECOMPASS</a></h3>
+          <p class="meta">Decommissioning Compass for Offshore Wind. Energy Transition Fund, <span class="nw">2025-2028</span></p>
+          <p>A quantitative model to compare decommissioning and processing scenarios for Belgian offshore wind turbines on economic and environmental sustainability. Coordinated by POM West-Vlaanderen.</p>
+        </li>
+        <li>
+          <h3><a href="https://www.bluecluster.eu/projects/cto">CTO</a></h3>
+          <p class="meta">Circular Transition in Offshore Wind. VLAIO, <span class="nw">2022-2024</span></p>
+          <p>A full life cycle analysis of offshore wind turbines that prepares the sector for the retirement of wind farms. The project covered decommissioning scenarios, material choices, material flows and a Building Information Model for offshore wind turbines.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <!-- One <li> per paper, newest first. Copy a block to add more. -->
+      <ul class="entries pubs">
+        <li>
+          <h3><a href="https://doi.org/10.1016/j.apenergy.2026.128065">Split incentives in shared waters: Introducing a multi-actor techno-economic assessment framework for offshore wind decommissioning</a></h3>
+          <p class="authors">J. Vetters, <strong>C. Demuytere</strong>, M. Louis, S. Van Passel, G. Thomassen</p>
+          <p class="venue"><em>Applied Energy</em> 418, 128065 (2026)</p>
+        </li>
+        <li>
+          <h3><a href="https://doi.org/10.2139/ssrn.7319858">From water to resource: A multi-actor techno-economic assessment for the offshore wind end-of-life supply chain</a></h3>
+          <p class="authors">J. Vetters, <strong>C. Demuytere</strong>, S. Van Passel, G. Thomassen</p>
+          <p class="venue">Preprint, SSRN (2026)</p>
+        </li>
+        <li>
+          <h3><a href="https://doi.org/10.1016/j.wasman.2025.115016">Navigating towards environmental sustainability assessments of offshore wind farms at the end-of-life</a></h3>
+          <p class="authors"><strong>C. Demuytere</strong>, G. Thomassen, J. Dewulf</p>
+          <p class="venue"><em>Waste Management</em> 205, 115016 (2025)</p>
+        </li>
+        <li>
+          <h3><a href="https://doi.org/10.1016/j.jclepro.2025.145794">Multilayer material system analysis of wind turbines: Correlation of stocks and flows in the EU of six metals and two drivetrain technologies</a></h3>
+          <p class="authors">M.F. Godoy León, C. Balsells Llort, <strong>C. Demuytere</strong>, S. Bobba, N. Tazi, J. Dewulf</p>
+          <p class="venue"><em>Journal of Cleaner Production</em> 518, 145794 (2025)</p>
+        </li>
+        <li>
+          <h3><a href="https://doi.org/10.1016/j.resconrec.2023.107283">Prospective material flow analysis of the end-of-life decommissioning: Case study of a North Sea offshore wind farm</a></h3>
+          <p class="authors"><strong>C. Demuytere</strong>, I. Vanderveken, G. Thomassen, M.F. Godoy León, L.V. De Luca Peña, C. Blommaert, J. Vermeir, J. Dewulf</p>
+          <p class="venue"><em>Resources, Conservation and Recycling</em> 200, 107283 (2024)</p>
+        </li>
+        <li>
+          <h3><a href="https://doi.org/10.1016/j.spc.2022.08.004">Comparing a material circularity indicator to life cycle assessment: The case of a three-layer plastic packaging</a></h3>
+          <p class="authors">K. Vadoudi, P. Deckers, <strong>C. Demuytere</strong>, H. Askanian, V. Verney</p>
+          <p class="venue"><em>Sustainable Production and Consumption</em> 33, 820-830 (2022)</p>
+        </li>
+        <li>
+          <h3><a href="https://doi.org/10.1016/j.watres.2015.04.030">Increasing RO efficiency by chemical-free ion-exchange and Donnan dialysis: Principles and practical implications</a></h3>
+          <p class="authors">M. Vanoppen, G. Stoffels, <strong>C. Demuytere</strong>, W. Bleyaert, A.R.D. Verliefde</p>
+          <p class="venue"><em>Water Research</em> 80, 59-70 (2015)</p>
+        </li>
+      </ul>
+      <p style="margin-top:1.5rem">Also listed on <a href="https://orcid.org/0000-0002-6376-6957">ORCID</a>.</p>
+    </section>
+
+    <section id="supervision">
+      <h2>Supervision</h2>
+      <p>Master thesis dissertations at Ghent University (STEN research group).</p>
+      <ul class="entries">
+        <li><h3>Is the loop really closed? Material quality as the missing dimension in the circularity of offshore wind cables</h3><p class="meta">Ongoing, <span class="nw">2026-2027</span></p></li>
+        <li><h3>Wired for growth: Future raw material demand for substations, grids and electrification under decarbonisation technologies</h3><p class="meta">Ongoing, <span class="nw">2026-2027</span></p></li>
+        <li><h3>What should we do with cables of end-of-life offshore wind farms?</h3><p class="meta">Stef Van Hecke. MSc Bioscience Engineering: Environmental Technology, <span class="nw">2023-2024</span></p></li>
+        <li><h3>Can wind turbines have a second life?</h3><p class="meta">Auri Callewaert. MSc Bioscience Engineering: Environmental Technology, <span class="nw">2023-2024</span></p></li>
+        <li><h3>The winds of change: Can future wind energy lower its impact on the planetary boundaries?</h3><p class="meta">Margot Scheldeman. MSc Bioscience Engineering: Environmental Technology, <span class="nw">2022-2023</span></p></li>
+        <li><h3>Multilayer material system analysis of wind turbines</h3><p class="meta">Cristina Balsells Llort. International MSc in Sustainable and Innovative Natural Resource Management (SINReM), <span class="nw">2022-2023</span></p></li>
+      </ul>
+    </section>
+
+    <section id="cv">
+      <h2>CV</h2>
+      <p>Education, research experience, skills and publications.</p>
+      <a class="button" href="cv.pdf" download>Download CV (PDF)</a>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <a href="mailto:celestin.demuytere@ugent.be">celestin.demuytere@ugent.be</a><br>
+        <a href="mailto:celestin.sebastien.demuytere@vub.be">celestin.sebastien.demuytere@vub.be</a>
+      </p>
+      <address>
+        Sustainable Systems Engineering (STEN)<br>
+        Department of Green Chemistry and Technology<br>
+        Faculty of Bioscience Engineering, Ghent University<br>
+        Coupure Links 653, Building B<br>
+        9000 Gent, Belgium
+      </address>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Célestin Demuytere. Last updated October 2026.</p>
+  </footer>
+
+</div>
+</body>
+</html>  .masthead-inner {
     position: relative;
     flex: 1;
     width: 100%;
